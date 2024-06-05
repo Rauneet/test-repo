@@ -27,7 +27,7 @@
       }
     }
   },
-  "input": {
+  "inputs": {
     "default": {
       "resourceType": "redis",
       "resourceName": "sanity"
