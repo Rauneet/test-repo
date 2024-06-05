@@ -1,0 +1,36 @@
+{
+  "kind": "redis_monitoring",
+  "flavor": "k8s",
+  "version": "0.1",
+  "disabled": true,
+  "spec": {
+    "exporter": {
+      "disabled": false
+    },
+    "alerts": {
+      "redis_down": {
+        "disabled": false,
+        "interval": "10m",
+        "severity": "critical"
+      },
+      "redis_out_of_configured_max_memory": {
+        "disabled": false,
+        "interval": "5m",
+        "severity": "critical",
+        "threshold": 90
+      },
+      "redis_too_many_connections": {
+        "disabled": false,
+        "interval": "5m",
+        "severity": "critical",
+        "threshold": 8000
+      }
+    }
+  },
+  "input": {
+    "default": {
+      "resourceType": "redis",
+      "resourceName": "sanity"
+    }
+  }
+}
